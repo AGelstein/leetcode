@@ -8,7 +8,6 @@ var runningSum = function(nums) {
         runningSums.push(accumulator)
         accumulator = 0
     }
-    console.log(runningSums)
     return runningSums;    
 };
 
