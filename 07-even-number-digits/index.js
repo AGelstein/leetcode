@@ -10,7 +10,6 @@ function findNumbers(nums) {
         if(digitCount % 2 == 0) ++count;
         digitCount = 0
     }
-    console.log(count)
     return count
 }
 
