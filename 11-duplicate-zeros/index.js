@@ -1,16 +1,15 @@
 // Duplicate Zeros
 var duplicateZeros = function(arr) {
-    let untrimmedArray = []
-    let trimmedArray = []
+    let numZeros = 0
     for(let i = 0; i < arr.length; i++) {
-        untrimmedArray.push(arr[i])
         if(arr[i] === 0) {
-        untrimmedArray.push(0)
+            arr.splice(i, 0, 0)
+            numZeros++
+            i++
         }
     }
-    trimmedArray = untrimmedArray.slice(0, 8)
-    console.log(trimmedArray)
-    return trimmedArray
-};
+    arr = arr.slice(0, -numZeros)
+    console.log(arr)
+}
 
-duplicateZeros([1,0,1,1,1,1,1,1])
+duplicateZeros([1,0,2,3,0,4,5,0])
