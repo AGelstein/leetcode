@@ -4,6 +4,7 @@ var mostFrequentEven = function(nums) {
     // make new array with only evens or return -1
     let evenArray = []
     let currentEvenIndex = 0
+    let currentBiggestAmount = 0
     let frequency = 0
     let mostFrequentEven = 0
     // this is just for the getting the evens
@@ -23,12 +24,15 @@ var mostFrequentEven = function(nums) {
             if(sortedArray[currentEvenIndex] == sortedArray[i]){
                 frequency += 1
             }
-            console.log(sortedArray[i])
-            console.log(frequency, 'frequency')
-        
         }
+            if(frequency > currentBiggestAmount)
+            {
+                currentBiggestAmount = frequency
+                currentEvenIndex = i
+            }
+            console.log(currentBiggestAmount, 'currentBiggestAmount')
 
-    }
+        }
 
     // most frequent even element
     // if there's a tie return the smallest one
